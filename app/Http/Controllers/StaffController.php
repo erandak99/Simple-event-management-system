@@ -45,7 +45,7 @@ class StaffController extends Controller
     /* assign staff member to branch */
     public function assign(Request $request)
     {
-        $Staff = Staff::findOrFail($request['id']);
+        $Staff = Staff::findOrFail($request['staffId']);
         $Staff->update($request->all());
 
         return response()->json($Staff, 200);
