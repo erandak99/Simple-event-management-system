@@ -1,8 +1,11 @@
 # Configuration Steps
 
 1.Take a clone from the branch
+
 2.Go to the project folder
+
 3.open .env file and change DB connection details
+
 4.Run php artisan migrate
 
 
