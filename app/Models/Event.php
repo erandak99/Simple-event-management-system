@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Branch extends Model
+class Event extends Model
 {
 
     /**
@@ -13,7 +13,7 @@ class Branch extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'branchCode'
+        'name', 'startDate', 'endDate', 'branchCode', 'status'
     ];
 
     /**

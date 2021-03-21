@@ -32,9 +32,17 @@ $router->group(['prefix' => 'api/staff'], function () use ($router) {
 // staff related
 $router->group(['prefix' => 'api/staff'], function () use ($router) {
     $router->post('add', ['uses' => 'StaffController@add']);
+    $router->post('assign', ['uses' => 'StaffController@assign']);
 });                     
 
 // branch related
 $router->group(['prefix' => 'api/branch'], function () use ($router) {
     $router->post('add', ['uses' => 'BranchController@add']);
+});
+
+// event related
+$router->group(['prefix' => 'api/event'], function () use ($router) {
+    $router->post('add', ['uses' => 'EventController@add']);
+    $router->post('assign/{id}', ['uses' => 'EventController@assign']);
+    $router->get('detail/{id}', ['uses' => 'EventController@getEvent']);
 });

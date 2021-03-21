@@ -13,7 +13,7 @@ class Staff extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'contactNo', 'nic'
+        'name', 'email', 'contactNo', 'nic', 'branchCode'
     ];
 
     /**

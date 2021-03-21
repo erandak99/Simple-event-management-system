@@ -8,21 +8,26 @@ use Illuminate\Http\Request;
 class StaffController extends Controller
 {
 
+    /****** Get all staff details *******/
     public function showAllStaffs()
     {
         return response()->json(Staff::all());
     }
 
+    /****** Get staff details by id *******/
     public function showOneStaff($id)
     {
         return response()->json(Staff::find($id));
     }
 
+    /****** Add staff member *******/
     public function add(Request $request)
     {
         $this->validate($request, [
-            'name'     => 'required',
-            'email'    => 'required|email|unique:staff',
+            'name'      => 'required|string',
+            'nic'       => 'required|max:12',
+            'contactNo' => 'required|numeric|digits:10',
+            'email'     => 'required|email|unique:staff',
         ]);
 
         $Staff = Staff::create($request->all());
@@ -30,17 +35,19 @@ class StaffController extends Controller
         return response()->json($Staff, 201);
     }
 
-    public function update($id, Request $request)
-    {
-        $Staff = Staff::findOrFail($id);
-        $Staff->update($request->all());
-
-        return response()->json($Staff, 200);
-    }
-
+    /****** Delete staff member by id *******/
     public function delete($id)
     {
         Staff::findOrFail($id)->delete();
         return response('Deleted Successfully', 200);
+    }
+
+    /* assign staff member to branch */
+    public function assign(Request $request)
+    {
+        $Staff = Staff::findOrFail($request['id']);
+        $Staff->update($request->all());
+
+        return response()->json($Staff, 200);
     }
 }
