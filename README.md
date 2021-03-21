@@ -1,4 +1,12 @@
-# Lumen PHP Framework
+# Configuration Steps
+
+1.Take a clone from the branch
+2.Go to the project folder
+3.open .env file and change DB connection details
+4.Run php artisan migrate
+
+
+# Lumen PHP Framework - Microservices
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
