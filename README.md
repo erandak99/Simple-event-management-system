@@ -8,6 +8,8 @@
 
 4.Run php artisan migrate
 
+5.Import postman api collection (Microservices.postman_collection.json)
+
 
 # Lumen PHP Framework - Microservices
 
