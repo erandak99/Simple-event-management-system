@@ -22,8 +22,7 @@ class EventService
 
     public function __construct()
     {
-        $this->baseUri = config('services.event.base_uri');
-        $this->secret = config('services.event.secret');
+        $this->baseUri = env('EVENT_SERVICE_BASE_URL');
     }
 
     public function addEvent($data)

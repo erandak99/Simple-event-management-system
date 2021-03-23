@@ -22,8 +22,7 @@ class BranchService
 
     public function __construct()
     {
-        $this->baseUri = config('services.branch.base_uri');
-        $this->secret = config('services.branch.secret');
+        $this->baseUri = env('EVENT_SERVICE_BASE_URL');
     }
 
     public function addBranch()

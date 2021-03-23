@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Traits\ConsumeExternalService;
 use Illuminate\Http\JsonResponse;
+use Config;
 
 class StaffService
 {
@@ -23,8 +24,7 @@ class StaffService
 
     public function __construct()
     {
-        $this->baseUri = config('services.staff.base_uri');
-        $this->secret = config('services.staff.secret');
+        $this->baseUri = env('BRANCH_SERVICE_BASE_URL');
     }
 
     public function addStaff($data)
